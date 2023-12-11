@@ -5,7 +5,7 @@ self.addEventListener('fetch', function(e) {
     e.respondWith(
         fetch(e.request).then(function(res) {
             return /(index\.html|\/)$/.test(res.url) ? 
-            res : new Response(res.body.pipeThrough(new DecompressionStream('deflate-raw')));
+            res : new Response(res.body.pipeThrough(new DecompressionStream('gzip')));
         })
       );
 });

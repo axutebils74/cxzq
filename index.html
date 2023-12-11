@@ -15,7 +15,8 @@
     <meta name="x5-page-mode" content="app">
     <link type='text/css' href='styles.css' rel='stylesheet'>
 </head>
-<body><script>
+<body>
+<script>
 if ('serviceWorker' in navigator) {
     navigator.serviceWorker.getRegistration('sw.js',{scope:'./'}).then(function(reg){
         if (!reg) {
