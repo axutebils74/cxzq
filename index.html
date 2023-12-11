@@ -20,7 +20,9 @@ if ('serviceWorker' in navigator) {
     navigator.serviceWorker.getRegistration('sw.js',{scope:'./'}).then(function(reg){
         if (!reg) {
             navigator.serviceWorker.register('sw.js',{scope:'./'}).then(function(reg){
-                location.reload()
+                setTimeout(function(){
+                    location.reload(true)
+                },100);
             })
         }
     }).catch(function(e){
